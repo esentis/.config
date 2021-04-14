@@ -4,7 +4,7 @@ parameters:
   default: $(Pipeline.Workspace)/pack/*.nupkg
 - name: feedName
   type: string
-  default: Kritikos
+  default: NugetKritikos
 
 steps:
 - task: NuGetCommand@2

@@ -52,13 +52,8 @@ stages:
         deployToSlot: ${{ parameters.deployToSlot }}
         artifact: ${{ parameters.artifact }}
         packagesToPush: ${{ parameters.packagesToPush }}
-  - ${{ if and(ne(variables['Build.SourceBranch'], 'refs/heads/develop'), ne(variables['Build.SourceBranch'], 'refs/heads/develop'))}}:
-    - deployment: Empty
+  - ${{ if and(and(ne(variables['Build.SourceBranch'], 'refs/heads/master'),ne(variables['Build.SourceBranch'], 'refs/heads/main')),ne(variables['Build.SourceBranch'], 'refs/heads/develop')) }}:
+    - job:
       displayName: Empty Job for compatibility
-      environment: ${{ parameters.environment }}
-      strategy:
-        runOnce:
-          deploy:
-            steps:
-              - download: current
-                artifact: ${{ parameters.artifact }}
+      steps:
+        - checkout: none
