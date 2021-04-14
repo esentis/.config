@@ -33,10 +33,9 @@
     "readabilityRules": {
       "allowBuiltInTypeAliases": false
     },
-    "spacingRules": {
-    },
+    "spacingRules": {},
     "documentationRules": {
-      "companyName": "Kritikos IO",
+      "companyName": "Esentis",
       "copyrightText": "Copyright (c) {companyName}. All rights reserved.",
       "xmlHeader": false,
       "headerDecoration": "-----------------------------------------------------------------------",
